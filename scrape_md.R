@@ -4,10 +4,10 @@ reporting <- read_html("https://results.elections.maryland.gov/county_status_pag
 	html_text() %>%
 	str_split("background-color", simplify = T)
 
-reporting_split <- reporting[2] %>%
+reporting_split_init <- reporting[2] %>%
 	str_split("\r\n")
 
-reporting_table <- reporting_split[[1]][3:202]
+reporting_table <- reporting_split_init[[1]][3:202]
 
 reporting_df <- as.data.frame(matrix(reporting_table, ncol = 8, byrow = T), stringsAsFactors = F) %>%
 	row_to_names(1) %>%
