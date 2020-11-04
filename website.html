@@ -1,0 +1,32 @@
+<body onload="fillData();">
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <a class="navbar-brand" href="#">Maryland Election Results</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-stretch" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="website/blog/docs/index.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="website/blog/docs/about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid parent">
+
+        <div class="chart"></div>
+
+        <script type="module">
+            import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+            import define from "https://api.observablehq.com/@adamchzn/md-counties-election-map.js?v=3";
+            (new Runtime).module(define, name => {
+                if (name === "chart") return Inspector.into(".chart")();
+            });
+        </script>
+
+    </div>
+</body>
