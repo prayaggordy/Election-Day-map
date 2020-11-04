@@ -63,13 +63,13 @@ boe_d4 <- read_html("https://results.elections.maryland.gov/elections/2020/resul
 	mutate_all(~ paste0(., "%"))
 
 kable(boe_al) %>%
-	kable_styling() %>%
+	kable_styling(bootstrap_options = "responsive", full_width = F) %>%
 	save_kable(file = "boe_al.html", self_contained = T)
 kable(boe_d2) %>%
-	kable_styling() %>%
+	kable_styling(bootstrap_options = "responsive", full_width = F) %>%
 	save_kable(file = "boe_d2.html", self_contained = T)
 kable(boe_d4) %>%
-	kable_styling() %>%
+	kable_styling(bootstrap_options = "responsive", full_width = F) %>%
 	save_kable(file = "boe_d4.html", self_contained = T)
 
 ballot_a <- read_html("https://results.elections.maryland.gov/elections/2020/results/general/gen_qresults_2020_4_16_1.html") %>%
@@ -116,7 +116,7 @@ ballot_questions <- rbind(ballot_a, ballot_b, ballot_c, ballot_d) %>%
 	mutate(For = paste0(For, "%"), Against = paste0(Against, "%"))
 
 kable(ballot_questions) %>%
-	kable_styling() %>%
+	kable_styling(bootstrap_options = "responsive", full_width = F) %>%
 	save_kable(file = "ballot_questions.html", self_contained = T)
 
 write_csv(pres, "pres.csv")
