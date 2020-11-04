@@ -14,22 +14,19 @@
 
 <body onload="fillData();">
     <nav class="navbar navbar-expand-lg sticky-top">
-        <a class="navbar-brand" href="#">Maryland Election Results</a>
+        <a class="navbar-brand" href="#">Montgomery County Election Results</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></i></span>
         </button>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container col-12 col-md-8 offset-md-2">
 
-        <div class="row col-8 offset-2">
-            <h2><br>Current presidential election results</h2>
-        </div>
+        <h2><br>Current presidential election results</h2>
 
-        <div class=" col-8 offset-2">
-            <div class="chart"></div>
-        </div>
+
+        <div class="chart"></div>
 
         <script type="module">
             import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
@@ -39,10 +36,26 @@
             });
         </script>
 
-        <div class="row col-8 offset-2">
-            <iframe src="boe_al.html" class="boe-table" frameborder="0"></iframe>
+        <h2><br>Montgomery County board of education</h2><br>
+
+        <div class="boe d-flex justify-content-center">
+            <div>
+                <iframe src="boe_al.html" class="boe-table" frameborder="0"></iframe>
+            </div>
+            <div>
+                <iframe src="boe_d2.html" class="boe-table" frameborder="0"></iframe>
+            </div>
+            <div>
+                <iframe src="boe_d4.html" class="boe-table" frameborder="0"></iframe>
+            </div>
         </div>
 
+        <h2><br>Ballot measures</h2><br>
+
+            <div>
+                <iframe src="ballot_questions.html" class="boe-table" frameborder="0"></iframe>
+            </div>
+            <br>
 
     </div>
     <footer class="col-12 footer">
