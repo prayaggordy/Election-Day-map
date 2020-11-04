@@ -6,11 +6,20 @@ pres <- read_html("https://results.elections.maryland.gov/elections/2020/results
 	select(county = 1, trump = 2, biden = 3) %>%
 	slice(-n())
 
-# reporting <- read_html("https://results.elections.maryland.gov/county_status_page_root.html") %>%
-# 	html_node(xpath = '//*[@id="mdgov_globalSiteWrapper"]/table') %>%
-# 	html_table() %>%
-# 	select(county = 1, trump = 2, biden = 3) %>%
-# 	slice(-n())
+reporting <- read_html("https://results.elections.maryland.gov/county_status_page_root.html") %>%
+	html_text() %>%
+	str_split("background-color", simplify = T)
+
+reporting_split <- reporting[2] %>%
+	str_split("\r\n")
+
+reporting_table <- reporting_split[[1]][3:202]
+
+reporting_df <- as.data.frame(matrix(reporting_table, ncol = 8, byrow = T), stringsAsFactors = F) %>%
+	row_to_names(1) %>%
+	clean_names() %>%
+	separate(col = number_election_day_vote_center_scanners_reported1, into = c("reporting_centers", "total_centers"), sep = " of ") %>%
+	mutate_at(vars(2:4), ~parse_number(.))
 
 boe_al <- read_html("https://results.elections.maryland.gov/elections/2020/results/general/gen_results_2020_4_by_county_160.html") %>%
 	html_node(xpath = '//*[@id="primary_right_col"]/div/div[2]/table') %>%

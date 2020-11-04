@@ -1,3 +1,3 @@
-name,early_voting,election_day,by_mail,prov,total,percent
-Sunil  Dasgupta,NR,NR,NR,NR,0,0
-Lynne  Harris,NR,NR,NR,NR,0,0
+name,early_voting,election_day,mail_in,prov,total,percent
+Sunil  Dasgupta,"46,370",0,"67,999",0,NA,46
+Lynne  Harris,"54,770",0,"76,907",0,NA,52.9
