@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="module">
   		import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-  		import define from "https://api.observablehq.com/@adamchzn/md-counties-election-map@932.js?v=3";
+  		import define from "https://api.observablehq.com/@adamchzn/md-counties-election-map.js?v=3";
   		const inspect = Inspector.into("#map");
   		(new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
   	</script>
@@ -28,18 +28,13 @@
     </nav>
 
     <div class="container-fluid">
-        <div class="row col-8 d-flex justify-content-center">
-<<<<<<< HEAD
+
+        <div class="row col-8 d-flex justify-content-center" id="map"> 
             <h2>Current presidential election results</h2>
-=======
-            <div id="map">Current presidential election results</div>
->>>>>>> parent of e8df504... fix map
         </div>
 
-        <div width=500 height=700 class="row col-8 d-flex justify-content-center" id="map"></div>
-
         <div class="row col-8 d-flex justify-content-center">
-            <iframe src="boe_al.html" class="boe-table" frameborder="0"></iframe>
+            <iframe src="boe_al.html" class="boe-table" frameborder="0"></iframe> 
         </div>
 
     </div>
