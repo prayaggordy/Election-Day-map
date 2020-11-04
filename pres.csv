@@ -1,25 +1,25 @@
 county,trump,biden,reported
-Allegany,NR,NR,0
-Anne Arundel,NR,NR,0
-Baltimore City,NR,NR,0
-Baltimore,NR,NR,0
-Calvert,NR,NR,0
-Caroline,NR,NR,0
-Carroll,NR,NR,0
-Cecil,NR,NR,0
-Charles,NR,NR,0
-Dorchester,NR,NR,0
-Frederick,NR,NR,0
-Garrett,NR,NR,0
-Harford,NR,NR,0
-Howard,NR,NR,0
-Kent,NR,NR,0
-Montgomery,NR,NR,0
-Prince George's,NR,NR,0
-Queen Anne's,NR,NR,0
-St. Mary's,NR,NR,0
-Somerset,NR,NR,0
-Talbot,NR,NR,0
-Washington,NR,NR,0
-Wicomico,NR,NR,0
-Worcester,NR,NR,0
+Allegany,"11,661","5,400",0
+Anne Arundel,"83,128","112,737",71
+Baltimore City,"15,233","142,456",98
+Baltimore,"83,391","141,937",100
+Calvert,"13,350","14,558",0
+Caroline,"9,237","3,572",0
+Carroll,"54,176","29,135",100
+Cecil,"14,768","9,807",0
+Charles,"20,289","35,937",100
+Dorchester,"5,399","4,142",0
+Frederick,"50,932","59,675",100
+Garrett,"10,912","2,573",0
+Harford,"50,550","36,680",100
+Howard,"34,419","92,585",100
+Kent,"3,873","3,505",0
+Montgomery,"57,246","244,866",100
+Prince George's,"25,220","281,245",100
+Queen Anne's,"13,052","7,191",100
+St. Mary's,"16,817","14,224",100
+Somerset,"3,632","2,539",0
+Talbot,"9,662","9,046",0
+Washington,"20,181","17,543",0
+Wicomico,"13,392","13,693",100
+Worcester,"13,333","7,303",0
