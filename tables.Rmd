@@ -1,0 +1,17 @@
+---
+output: html_document
+params:
+  fn: "boe_al"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+easypackages::libraries("tidyverse", "kableExtra", "knitr")
+```
+
+```{r}
+df <- read_csv(paste(params$fn, "csv", sep = "."))
+kable(df) %>%
+	kable_styling(bootstrap_options = "responsive", full_width = F)
+```
+
