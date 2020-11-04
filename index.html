@@ -23,7 +23,6 @@
         <h2>Presidential election results</h2>
 
         <div class="chart"></div>
-        <div class="row">
         <script type="module">
             import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
             import define from "https://api.observablehq.com/@adamchzn/md-counties-election-map.js?v=3";
@@ -31,10 +30,9 @@
                 if (name === "chart") return Inspector.into(".chart")();
             });
         </script>
-        </div>
 
         <div class="row">
-          <link href="boe_al.html" rel="import" />
+          <iframe src="boe_al.html" class="boe-table"></iframe>
         </div>
 
     </div>
