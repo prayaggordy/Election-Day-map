@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="module">
   		import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-  		import define from "https://api.observablehq.com/@adamchzn/md-counties-election-map@932.js?v=3";
+  		import define from "https://api.observablehq.com/@adamchzn/md-counties-election-map.js?v=3";
   		const inspect = Inspector.into("#map");
   		(new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
   	</script>
@@ -29,7 +29,7 @@
 
     <div class="container-fluid">
         <div class="row col-8 d-flex justify-content-center">
-            <div id="map">Current presidential election results</div>
+            <div id="map"><h2>Current presidential election results</h2></div>
         </div>
 
         <div class="row col-8 d-flex justify-content-center">
