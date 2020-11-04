@@ -19,11 +19,8 @@
     </nav>
 
     <div class="container col-8 d-flex justify-content-center">
-        <div class="row"></div>
+        <div class="row">
             <h2>Presidential election results</h2>
-
-            <iframe frameborder="0"
-            src="https://observablehq.com/embed/@adamchzn/md-counties-election-map?cell=chart"></iframe>
 
             <div class="chart"></div>
             <script type="module">
@@ -33,10 +30,15 @@
                     if (name === "chart") return Inspector.into(".chart")();
                 });
             </script>
-        <div></div>
+        </div>
 
         <div class="row">
-            <iframe src="boe_al.html" class="boe-table"  frameborder="0"></iframe>
+            <iframe frameborder="0"
+                src="https://observablehq.com/embed/@adamchzn/md-counties-election-map?cell=chart"></iframe>
+        </div>
+
+        <div class="row">
+            <iframe src="boe_al.html" class="boe-table" frameborder="0"></iframe>
         </div>
 
     </div>
