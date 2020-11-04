@@ -1,22 +1,22 @@
 easypackages::libraries("tidyverse", "rvest", "janitor", "knitr", "kableExtra", "rmarkdown")
 
-reporting <- read_html("https://results.elections.maryland.gov/county_status_page_root.html") %>%
-	html_text() %>%
-	str_remove_all("\\*") %>%
-	str_split("background-color", simplify = T)
-
-reporting_split_init <- reporting[2] %>%
-	str_split("\r\n")
-
-reporting_table <- reporting_split_init[[1]][3:177]
-
-reporting_df <- as.data.frame(matrix(reporting_table, ncol = 7, byrow = T), stringsAsFactors = F) %>%
-	row_to_names(1) %>%
-	clean_names() %>%
-	separate(col = number_election_day_vote_center_scanners_reported1, into = c("reporting_centers", "total_centers"), sep = " of ") %>%
-	mutate_at(vars(2:4), ~parse_number(.)) %>%
-	mutate_all(~str_trim(.)) %>%
-	mutate_at(vars(5:ncol(.)), ~ifelse(. == "3Local", "Local results only", .))
+# reporting <- read_html("https://results.elections.maryland.gov/county_status_page_root.html") %>%
+# 	html_text() %>%
+# 	str_remove_all("\\*") %>%
+# 	str_split("background-color", simplify = T)
+#
+# reporting_split_init <- reporting[2] %>%
+# 	str_split("\r\n")
+#
+# reporting_table <- reporting_split_init[[1]][3:177]
+#
+# reporting_df <- as.data.frame(matrix(reporting_table, ncol = 7, byrow = T), stringsAsFactors = F) %>%
+# 	row_to_names(1) %>%
+# 	clean_names() %>%
+# 	separate(col = number_election_day_vote_center_scanners_reported1, into = c("reporting_centers", "total_centers"), sep = " of ") %>%
+# 	mutate_at(vars(2:4), ~parse_number(.)) %>%
+# 	mutate_all(~str_trim(.)) %>%
+# 	mutate_at(vars(5:ncol(.)), ~ifelse(. == "3Local", "Local results only", .))
 
 pres <- read_html("https://results.elections.maryland.gov/elections/2020/results/General/gen_detail_results_2020_4_BOT001-.html") %>%
 	html_node(xpath = '//*[@id="primary_right_col"]/div/div[2]/table') %>%
@@ -117,7 +117,7 @@ ballot_questions <- rbind(ballot_a, ballot_b, ballot_c, ballot_d) %>%
 # 	mutate_at(vars(3), ~ paste0(., "%"))
 
 write_csv(pres, "pres.csv")
-write_csv(reporting_df, "reporting.csv")
+# write_csv(reporting_df, "reporting.csv")
 # write_csv(reporting_table_df, "reporting_table.csv")
 write_csv(boe_al, "boe_al.csv")
 write_csv(boe_d2, "boe_d2.csv")
