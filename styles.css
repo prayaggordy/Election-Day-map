@@ -1,0 +1,56 @@
+.tooltip {
+  background: white;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  position: absolute;
+  font-family: Helvetica, Arial, sans-serif;
+  stroke-linecap: round;
+  border-radius: 5px;
+  pointer-events: none;
+}
+.county {
+  font-weight: 700;
+  font-size: 20px;
+}
+svg {
+  cursor: pointer;
+}
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  border-spacing: 5px;
+  border-left-width: thin;
+  border-color: grey;
+}
+.cell-colorblock-dem {
+  background-color: #3473D1;
+}
+.cell-colorblock-rep {
+  background-color: #CB4141;
+  padding-top: 3px;
+}
+.cell-colorblock {
+  width: 2px;
+  border-radius: 2px;
+}
+.cell-name {
+  font-size: 14px;
+}
+
+.cell-vote {
+  font-size: 14px;
+}
+th {
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: grey;
+  padding-bottom: 3px;
+}
+td {
+  line-height: 14px;
+}
+.map-toggle-swing-state {
+  margin-left: 200px;
+}
