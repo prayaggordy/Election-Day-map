@@ -119,6 +119,10 @@ kable(ballot_questions) %>%
 	kable_styling(bootstrap_options = "responsive", full_width = F) %>%
 	save_kable(file = "ballot_questions.html", self_contained = T)
 
+kable(select(reporting_df, -prov, -mib2) %>% mutate(percent_election_day_results_reported2 = paste0(percent_election_day_results_reported2, "%")), col.names = c("County", "Election day vote center scanners reported", "Total election day vote center scanners", "Election day percent reported", "Early voting canvass results", "Election night canvass results", "Mail-in ballot results")) %>%
+	kable_styling(bootstrap_options = "responsive", full_width = F) %>%
+	save_kable(file = "reporting.html", self_contained = T)
+
 write_csv(pres, "pres.csv")
 write_csv(reporting_df, "reporting.csv")
 write_csv(boe_al, "boe_al.csv")
