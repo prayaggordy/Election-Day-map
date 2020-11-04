@@ -86,7 +86,7 @@ ballot_b <- read_html("https://results.elections.maryland.gov/elections/2020/res
 	mutate(total = parse_number(total), percentage = parse_number(percentage)) %>%
 	select(1, percentage) %>%
 	pivot_wider(names_from = 1, values_from = percentage) %>%
-	mutate(Question = "B: Cap property tax rate increases at inflation") %>%
+	mutate(Question = "B: Cap property tax increases at inflation") %>%
 	select(Question, For, Against)
 
 ballot_c <- read_html("https://results.elections.maryland.gov/elections/2020/results/general/gen_qresults_2020_4_16_1.html") %>%
