@@ -27,7 +27,8 @@ pres <- read_html("https://results.elections.maryland.gov/elections/2020/results
 				 trump = trump/total_votes,
 				 biden = biden/total_votes) %>%
 	inner_join(select(reporting_df, county, reported = percent_election_day_results_reported2), by = "county") %>%
-	select(-total_votes)
+	select(-total_votes) %>%
+	mutate(reported = as.numeric(reported)/100)
 
 boe_al <- read_html("https://results.elections.maryland.gov/elections/2020/results/general/gen_results_2020_4_by_county_160.html") %>%
 	html_node(xpath = '//*[@id="primary_right_col"]/div/div[2]/table') %>%
