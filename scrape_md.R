@@ -1,0 +1,1 @@
+easypackages::libraries("tidyverse", "rvest")
