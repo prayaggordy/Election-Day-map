@@ -13,7 +13,7 @@
         </button>
     </nav>
 
-    <h1>Presidential election results</h1>
+    <h2>Presidential election results</h2>
     <div class="container-fluid parent col-8 d-flex justify-content-center">
 
         <div class="map"></div>
@@ -22,7 +22,7 @@
             import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
             import define from "https://api.observablehq.com/@adamchzn/md-counties-election-map.js?v=3";
             (new Runtime).module(define, name => {
-                if (name === "map") return Inspector.into(".chart")();
+                if (name === "map") return Inspector.into(".map")();
             });
         </script>
 
